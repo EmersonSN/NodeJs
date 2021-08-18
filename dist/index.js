@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+let nome = 'Emerson';
+let idade = 22;
+console.log(`Meu nome é ${nome} e eu tenho ${idade} anos`);
+const op = require('./op');
+let n1 = 10;
+let n2 = 20;
+console.log(`SOMA: ${op.somar(n1, n2)}`);
+console.log(`SUBTRAÇÃO: ${op.subtrair(n1, n2)}`);
+console.log(`MULTIPLICAÇÃO: ${op.multiplicar(n1, n2)}`);
