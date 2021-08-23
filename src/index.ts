@@ -1,5 +1,6 @@
 import { Console } from "console";
 import { somar, subtrair } from './op';
+import validator from 'validator';
 /*import * as op from './op';
 import op from './op';  funcionando normalmente*/
 
@@ -15,3 +16,5 @@ console.log("Primero valor: " + n1 +" Segundo valor: "+ n2);
 console.log(`SOMA: ${somar(n1,n2)}`);
 console.log(`SUBTRAÇÃO: ${subtrair(n1,n2)}`);
 //console.log(`MULTIPLICAÇÃO: ${op.multiplicar(n1,n2)}`);
+
+console.log(validator.isEmail('emerson@gmail.com'));
