@@ -1,11 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const op_1 = require("./op");
+/*import * as op from './op';
+import op from './op';  funcionando normalmente*/
 let nome = 'Emerson';
 let idade = 22;
 console.log(`Meu nome é ${nome} e eu tenho ${idade} anos`);
-const op = require('./op');
+//const op = require('./op');
 let n1 = 10;
 let n2 = 20;
-console.log(`SOMA: ${op.somar(n1, n2)}`);
-console.log(`SUBTRAÇÃO: ${op.subtrair(n1, n2)}`);
-console.log(`MULTIPLICAÇÃO: ${op.multiplicar(n1, n2)}`);
+console.log("Primero valor: " + n1 + " Segundo valor: " + n2);
+console.log(`SOMA: ${op_1.somar(n1, n2)}`);
+console.log(`SUBTRAÇÃO: ${op_1.subtrair(n1, n2)}`);
+//console.log(`MULTIPLICAÇÃO: ${op.multiplicar(n1,n2)}`);
