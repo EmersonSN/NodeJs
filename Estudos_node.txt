@@ -1,0 +1,27 @@
+Configurando o TS (tsconfig.json) = add->"moduleResolution": "node", change->"target":"es6", change->"outDir": "./dist"(pasta destina do arquivo .js)
+change-> "rootDir": "./src"(pasta destina do arquivo .ts) 
+Adicionando o opções de node ao TS = npm install --save-dev @types/node
+Baixando bibliotecas que não vieram no repositorio = npm install
+Executando arquivo js= node pasta/arquivo.js
+Deixar o TS monitorando possiveis mudanças no arquivo ts para atualizar o .js -> tsc -w
+Criar macros = entrar no documento package.json e ir em scrip
+import e export/usar functions de outro arquivo js = exportando -> module.exports.NomeFunction = apelidoDado; Importando-> const nomeConst = require('./nomeFile')
+import e export/usar functions de outro arquivo js atual (ES6) = Usar "export" a frente de toda função ou objeto unico que deseja exportar, para exportar mais de uma function de uma vez use: "export default {NomeFunction, NomeFunction}" e coloque dentro todas as functions, variaveis e obejtos que seja exportar, para importar usar "import { nomeDasFuncoes/Objetos from 'caminho arquivo' }" para Funcoes/Objetos unicos ou especificos ou usar "import { * as nomeQueDesejar from 'caminho arquivo' }" para toda as Funcoes/Objetos do arquivo.
+Exportando padrão = para importar o export default use: "importe NomeArquivo from 'caminhoArquivo'".
+Instlando arquivos do NPM/importando arquivos de terceiros = use "npm install NomeBibliota" no site npmjs tem varias bibliotecas.
+Monitorando mudanças no arquivo JS = instalar nodemon (npm install -g nodemon) rodar com -> nodemon pasta/arquivoJs.js.
+Rodar arquivos TS = instalar biblioteca ts-node usando-> npm -g ts-node, podendo rodar os arquivos TS usando-> ts-nome pasta/arquivos.TS.
+Monitando arquivo TS com nodemon = nodemon pasta/arquivos.TS.
+Servidores node = instalar biblioteca express para auxiliar na criaçao, use->npm install express.
+Instalando types da biblioteca express = usando-> npm install types/express./*package.json configurar script start a moda*/
+Acessando e validando servidor = http://localhost:portaConfigurada.
+=====================================================================
+Estudando rotas -> METODOS/requisições
+GET,POST,PUT,DELETE
+GET= Acessar pagina
+POST= Mandar algo internamente/corpo da requisição junto
+req= Informaçãoes sobre requisições, fica armazenado
+res= Qualquer retorno que a pagina dará pra quem acessar o servidor/site. Controle da resposta.
+Rota dinamica= 
+Separando arquivos de rotas = Crie uma nova pasta, crie as rotas e exporte, após isso impore no arquivo principal. Se tiver mais de um grupo de rotas crie uma pasta pra cada grupo.
+=====================================================================
