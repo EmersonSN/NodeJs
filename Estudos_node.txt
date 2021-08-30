@@ -24,4 +24,11 @@ req= Informaçãoes sobre requisições, fica armazenado
 res= Qualquer retorno que a pagina dará pra quem acessar o servidor/site. Controle da resposta.
 Rota dinamica= 
 Separando arquivos de rotas = Crie uma nova pasta, crie as rotas e exporte, após isso impore no arquivo principal. Se tiver mais de um grupo de rotas crie uma pasta pra cada grupo.
+Criando 404 pagina não encontrada= criar um use com response status 404
+Deixando pasta/rota estatica/publica = server.use(express.static(path.join(__dirname,'diretorioNomeArquivoPublico')));
 =====================================================================
+Estudos templates node framework mustache engine
+Instalando o mustache = npm install mustache-express e npm install --save-dev @types/mustache-express
+Configurando o mustache engine = server.set('view engine', 'mustache'); server.set('views', path.join(__dirname, 'CaminhoPastaArquivoshtml')); server.engine('mustache', mustache());
+Mudando rota para pegar arquivo html mustache = router.get('/', (req:Request, res:Response)=>{ res.render('nomeArquivo')});
+Adicionar a extenção mustache ao nodemoon para ser monitorando assim como o TS
