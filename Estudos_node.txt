@@ -32,3 +32,7 @@ Instalando o mustache = npm install mustache-express e npm install --save-dev @t
 Configurando o mustache engine = server.set('view engine', 'mustache'); server.set('views', path.join(__dirname, 'CaminhoPastaArquivoshtml')); server.engine('mustache', mustache());
 Mudando rota para pegar arquivo html mustache = router.get('/', (req:Request, res:Response)=>{ res.render('nomeArquivo')});
 Adicionar a extenção mustache ao nodemoon para ser monitorando assim como o TS
+Exibição de itens mustache = para exibir iten booleans use->{{#NomeObj/Variavel}}para abrir {{/#NomeObj/Variavel}} para fechar
+Exibição de itens em lista [] mustache = {{#NomeArray}}para abrir {{/#NomeArray}} para fechar para ixibir os itens use -> {{item}} caso não seja um obejeto use-> {{.}}
+=====================================================================
+Estudo 

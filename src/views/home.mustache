@@ -11,5 +11,21 @@
     <p>Olá, mundo!!</p>
     <p>Bem vindo(a), caro(a) {{user}}!</p>
     <p>Você conhece o {{obj.nome}} que tem {{obj.idade}} anos?</p>
+    {{#verificar}}
+        Então vc realmente é <b>maior de idade</b>
+    {{/verificar}}
+
+    <h2>PRODUTOS</h2>
+    <ul>
+        {{#produtos}}
+            <li>{{titulo}} - R${{preco}}</li>
+        {{/produtos}}
+    </ul>
+    <hr/>
+    <ul>
+        {{#Melhoreodia}}
+            <li>{{.}}</li>
+        {{/Melhoreodia}}
+    </ul>
 </body>
 </html>
