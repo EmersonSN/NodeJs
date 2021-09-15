@@ -1,12 +1,4 @@
-<html>
-<head>
-    <title>
-    Primeira pagina
-    </title>
-</head>
-<body>
-    <h1> TITULO DA PÁGINA </h1>
-    <hr/>
+{{>partials/header}}
 
     <p>Olá, mundo!!</p>
     <p>Bem vindo(a), caro(a) {{user}}!</p>
@@ -18,7 +10,7 @@
     <h2>PRODUTOS</h2>
     <ul>
         {{#produtos}}
-            <li>{{titulo}} - R${{preco}}</li>
+           {{>partials/produtos}}
         {{/produtos}}
     </ul>
     <hr/>
@@ -26,6 +18,9 @@
         {{#Melhoreodia}}
             <li>{{.}}</li>
         {{/Melhoreodia}}
+
+        {{^Melhoreodia}}
+            <p>Não há frases motivacionais hj</p>
+        {{/Melhoreodia}}
     </ul>
-</body>
-</html>
+{{>partials/footer}}

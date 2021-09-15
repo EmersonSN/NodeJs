@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { render } from "express/lib/response";
+import res, { render } from "express/lib/response";
 
 const router = Router();
 
@@ -13,7 +13,7 @@ router.get('/', (req:Request, res:Response)=>{
     if(obj.idade > 17){
         verificar = true;
     }
-    res.render('home.mustache', {
+    res.render('pages/home.mustache', {
         user,obj, verificar,
         produtos:[
             {titulo:'arroz', preco:10},
@@ -21,9 +21,9 @@ router.get('/', (req:Request, res:Response)=>{
             {titulo:'farinha', preco:4}
         ],
         Melhoreodia:[
-            'Sorria, o dia está lindo',
+            /*'Sorria, o dia está lindo',
             'Clima ensolarado',
-            'Clima de piscina'
+            'Clima de piscina'*/
         ]
     });
 });
@@ -34,17 +34,41 @@ router.get('/paginaTeste',(req:Request, res:Response)=>{
     function somar(x:number, y:number){
         return n1+n2;
     }
-    res.render('PaginaTeste.mustache', {
+    res.render('pages/PaginaTeste.mustache', {
         somar, n1, n2
     })
 })
 
 router.get('/contato', (req:Request, res:Response)=>{
-    res.send('Formulario de contato');
+    res.render('pages/contato.mustache');
 });
 
 router.get('/sobre', (req:Request, res:Response)=>{
-    res.send('Sobre a empresa');
+    res.render('pages/sobre.mustache');
 });
+router.get('/nome',(req:Request, res:Response)=>{
+   // console.log("Query String", req.query);
+    let meuNome:string = req.query.nome as string;
+    let idade:string = req.query.idade as string;
+    res.render('pages/nome.mustache',{
+        meuNome, idade
+    })
+});
+
+router.get('/idade',(req:Request, res:Response)=>{
+    let mostrarIdade:boolean = false;
+    let idade:number=0;
+    if(req.query.ano){
+        let anoNascimento:number = parseInt(req.query.ano as string);
+        let anoAtual:number = new Date().getFullYear();
+        idade = anoAtual - anoNascimento;
+
+        mostrarIdade = true;
+    }
+    res.render('pages/idade.mustache',{
+        idade, mostrarIdade
+    })
+})
+
 
 export default router;

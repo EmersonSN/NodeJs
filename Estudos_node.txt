@@ -32,7 +32,9 @@ Instalando o mustache = npm install mustache-express e npm install --save-dev @t
 Configurando o mustache engine = server.set('view engine', 'mustache'); server.set('views', path.join(__dirname, 'CaminhoPastaArquivoshtml')); server.engine('mustache', mustache());
 Mudando rota para pegar arquivo html mustache = router.get('/', (req:Request, res:Response)=>{ res.render('nomeArquivo')});
 Adicionar a extenção mustache ao nodemoon para ser monitorando assim como o TS
-Exibição de itens mustache = para exibir iten booleans use->{{#NomeObj/Variavel}}para abrir {{/#NomeObj/Variavel}} para fechar
-Exibição de itens em lista [] mustache = {{#NomeArray}}para abrir {{/#NomeArray}} para fechar para ixibir os itens use -> {{item}} caso não seja um obejeto use-> {{.}}
+Exibição de itens mustache = para exibir iten booleans use->{{#NomeObj/Variavel}}para abrir {{/NomeObj/Variavel}} para fechar
+Exibição de itens em lista [] mustache = {{#NomeArray}}para abrir {{/NomeArray}} para fechar para ixibir os itens use -> {{item}} caso não seja um obejeto use-> {{.}}
+Exibir mensagem quando não há item na lista = use->{{^NomeArray}}Mensagem para quando não houver itens{{/NomeArray}}
+Usando conteudo parcial = Crie a pasta partials e nela cole partes de codigo html, como por exemplo o header, em um novo arquivo e chame usando {{>partial/arquivos.mustache}}
+Pegar itens da URL, metodo GET = Dentro do router da pagina que está com o metodo "GET", use :let NomeVar:string = req.query.NomeCaixaInput as string;
 =====================================================================
-Estudo 
